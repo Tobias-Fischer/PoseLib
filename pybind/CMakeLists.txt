@@ -3,7 +3,7 @@
 find_package (Python COMPONENTS Interpreter Development)
 message(STATUS "Python_EXECUTABLE: " ${Python_EXECUTABLE})
 
-add_subdirectory(pybind11)
+find_package(pybind11 REQUIRED)
 
 pybind11_add_module(pyposelib MODULE pyposelib.cc)
 target_link_libraries(pyposelib PUBLIC PoseLib::PoseLib Eigen3::Eigen)
