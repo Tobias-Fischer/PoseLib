@@ -13,7 +13,10 @@ set_target_properties(pyposelib PROPERTIES OUTPUT_NAME _core)
 set_compile_flags(pyposelib)
 
 # Install the compiled module
-install(TARGETS pyposelib LIBRARY DESTINATION . COMPONENT python)
+install(
+    TARGETS pyposelib
+    LIBRARY DESTINATION ${Python_SITEARCH}/pyposelib COMPONENT python
+)
 
 if(GENERATE_STUBS)
     message(STATUS "Enabling stubs generation")
