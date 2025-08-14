@@ -111,3 +111,10 @@ include(${PROJECT_SOURCE_DIR}/cmake/LibraryConfig.cmake)
 
 # Eigen
 target_link_libraries(${LIBRARY_NAME} Eigen3::Eigen)
+
+install(
+    TARGETS ${LIBRARY_NAME}
+    LIBRARY DESTINATION lib
+    ARCHIVE DESTINATION lib
+    RUNTIME DESTINATION bin
+)
